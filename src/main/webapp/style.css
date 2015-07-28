@@ -19,6 +19,11 @@ body { margin:0;padding:0;}
 	border-top : 1px solid #888;
 	z-index : 0;
 }
+#ft input{
+	font-family: 'Yanone Kaffeesatz', arial, serif;
+	width: 100px;
+	margin-left : 85%;
+}
 #logo,#bd {
 	width : 650px;
 	margin: 0 auto;
