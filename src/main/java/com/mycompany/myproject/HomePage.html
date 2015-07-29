@@ -8,61 +8,98 @@
 		<link rel="shortcut icon" href="fabicon.ico" >
 	</head>
 	<body>
-		<div id="hd">
-			<div id="logo">
-				<img src="logo.png" width="50px" height="50px" alt="Wicket Logo" />
-				<h1>Quote Generator</h1>
+		<form wicket:id="form">
+			<div id="hd">
+				<div id="logo">
+					<img src="logo.png" width="50px" height="50px" alt="Wicket Logo" />
+					<h1>Quote Generator</h1>
+				</div>
 			</div>
-		</div>
-		<div id="bd">
-			<h2>見積書を簡単作成！</h2>
-			<p>
-				記入が完了したら、右下のGenerate!ボタンを押してください。
-			</p>
-			<h3>会社情報</h3>
-			<p>
-				受注先会社名:<input type="text" name="OrderingCompany">
-			</p>
-			<p>
-				住所:<input type="text" name="OrderingCompanyAddress">
-			</p>
-			<p>
-				受注先担当者名:<input type="text" name="OrderingContactPersonName">
-			</p>
+			<div id="bd">
+				<h2>見積書を簡単作成！</h2>
+				<p>
+					記入が完了したら、右下のGenerate!ボタンを押してください。
+				</p>
+				<h3>会社情報</h3>
+				<!-- 追加した部分 -->
+				<p>
+					受注先会社名:<input wicket:id="orderingCompany" type="text" name="OrderingCompany">
+				</p>
 
-			<h3>見積内容</h3>
-			<ul>
-				<li>項目1:<input type="text" name="ProductItem1"></li>
-				<li>数量1:<input type="text" name="Quantity1"></li>
-				<li>単価1:<input type="text" name="UnitPrice1"></li>
-				<li>金額1:<input type="text" name="AmountOfMoney1"></li><br>
+				<p>
+					住所:<input type="text" name="OrderingCompanyAddress">
+				</p>
+				<p>
+					受注先担当者名:<input type="text" name="OrderingContactPersonName">
+				</p>
 
-				<li>項目2:<input type="text" name="ProductItem2"></li>
-				<li>数量2:<input type="text" name="Quantity2"></li>
-				<li>単価2:<input type="text" name="UnitPrice2"></li>
-				<li>金額2:<input type="text" name="AmountOfMoney2"></li><br>
+				<h3>見積内容</h3>
+				<ul>
+					<li>項目1:<input type="text" name="ProductItem1"></li>
+					<li>数量1:<input type="text" name="Quantity1"></li>
+					<li>単価1:<input type="text" name="UnitPrice1"></li>
+					<li>金額1:<input type="text" name="AmountOfMoney1"></li><br>
 
-				<li>項目3:<input type="text" name="ProductItem3"></li>
-				<li>数量3:<input type="text" name="Quantity3"></li>
-				<li>単価3:<input type="text" name="UnitPrice3"></li>
-				<li>金額3:<input type="text" name="AmountOfMoney3"></li><br>
+					<li>項目2:<input type="text" name="ProductItem2"></li>
+					<li>数量2:<input type="text" name="Quantity2"></li>
+					<li>単価2:<input type="text" name="UnitPrice2"></li>
+					<li>金額2:<input type="text" name="AmountOfMoney2"></li><br>
 
-				<li>項目4:<input type="text" name="ProductItem4"></li>
-				<li>数量4:<input type="text" name="Quantity4"></li>
-				<li>単価4:<input type="text" name="UnitPrice4"></li>
-				<li>金額4:<input type="text" name="AmountOfMoney4"></li><br>
+					<li>項目3:<input type="text" name="ProductItem3"></li>
+					<li>数量3:<input type="text" name="Quantity3"></li>
+					<li>単価3:<input type="text" name="UnitPrice3"></li>
+					<li>金額3:<input type="text" name="AmountOfMoney3"></li><br>
 
-				<li>項目5:<input type="text" name="ProductItem5"></li>
-				<li>数量5:<input type="text" name="Quantity5"></li>
-				<li>単価5:<input type="text" name="UnitPrice5"></li>
-				<li>金額5:<input type="text" name="AmountOfMoney5"></li><br>
-			</ul>
+					<li>項目4:<input type="text" name="ProductItem4"></li>
+					<li>数量4:<input type="text" name="Quantity4"></li>
+					<li>単価4:<input type="text" name="UnitPrice4"></li>
+					<li>金額4:<input type="text" name="AmountOfMoney4"></li><br>
 
-		</div>
-		<div id="ft">
-			<form wicket:id="form">
+					<li>項目5:<input type="text" name="ProductItem5"></li>
+					<li>数量5:<input type="text" name="Quantity5"></li>
+					<li>単価5:<input type="text" name="UnitPrice5"></li>
+					<li>金額5:<input type="text" name="AmountOfMoney5"></li><br>
+				</ul>
+
+			</div>
+			<div id="ft">
 				<input wicket:id="nextButton" type="submit" value="Generate!"/>
-			</form>
-		</div>
+			</div>
+		</form>
 	</body>
 </html>
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<html-->
+		<!--xmlns="http://www.w3.org/1999/xhtml"-->
+		<!--xmlns:wicket="http://wicket.apache.org/">-->
+<!--<head>-->
+	<!--<title>Wicket Examination Homepage</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<strong>Wicket Examination Homepage</strong>-->
+<!--<br/><br/>-->
+<!--<span wicket:id="msg"> error message will be here </span>-->
+<!--<form wicket:id="f">-->
+	<!--Subject : <input type="text" wicket:id="subject" size="35"/>-->
+	<!--<br/><br/>-->
+	<!--Date : <input type="text" wicket:id="date" size="20"/>-->
+	<!--Type :-->
+	<!--<select wicket:id="type">-->
+		<!--<option>Example1</option>-->
+		<!--<option>Example2</option>-->
+		<!--<option>Example3</option>-->
+	<!--</select>-->
+	<!--<br/><br/>-->
+	<!--Article : <br/>-->
+  <!--<textarea wicket:id="article" rows="5" cols="40">-->
+    <!--article will be here-->
+  <!--</textarea>-->
+	<!--<br/><br/>-->
+	<!--<input type="submit" value="POST"/>-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
