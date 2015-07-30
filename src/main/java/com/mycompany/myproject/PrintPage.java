@@ -42,7 +42,7 @@ public class PrintPage extends WebPage{
             add(new Label("calcAmountOfMoney2", calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2())));
         }
         else{
-            add(new Label("calcAmountOfMoney1", "２の単価または数量に空欄があります"));
+            add(new Label("calcAmountOfMoney2", "２の単価または数量に空欄があります"));
         }
         if(page.getMQuantity3().getObject()!=null && page.getMUnitPrice3().getObject()!=null){
             add(new Label("calcAmountOfMoney3", calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3())));
@@ -64,9 +64,6 @@ public class PrintPage extends WebPage{
         }
     }
 
-    public void formerPage(HomePage page){
-        formerPage = page;
-    }
     public Integer calcAmountOfMoney(Model quantityValue, Model unitPriceValue){
         return Integer.parseInt(quantityValue.getObject().toString()) * Integer.parseInt(unitPriceValue.getObject().toString());
     }
