@@ -32,12 +32,36 @@ public class PrintPage extends WebPage{
         add(new Label("unitPriceValue3", page.getMUnitPrice3()));
         add(new Label("unitPriceValue4", page.getMUnitPrice4()));
         add(new Label("unitPriceValue5", page.getMUnitPrice5()));
-
-        add(new Label("calcAmountOfMoney1", calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1())));
-        add(new Label("calcAmountOfMoney2", calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2())));
-        add(new Label("calcAmountOfMoney3", calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3())));
-        add(new Label("calcAmountOfMoney4", calcAmountOfMoney(page.getMQuantity4(), page.getMUnitPrice4())));
-        add(new Label("calcAmountOfMoney5", calcAmountOfMoney(page.getMQuantity5(), page.getMUnitPrice5())));
+        if(page.getMQuantity1().getObject()!=null && page.getMUnitPrice1().getObject()!=null) {
+            add(new Label("calcAmountOfMoney1", calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1())));
+        }
+        else{
+            add(new Label("calcAmountOfMoney1", "１の単価または数量に空欄があります"));
+        }
+        if(page.getMQuantity2().getObject()!=null && page.getMUnitPrice2().getObject()!=null){
+            add(new Label("calcAmountOfMoney2", calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2())));
+        }
+        else{
+            add(new Label("calcAmountOfMoney1", "２の単価または数量に空欄があります"));
+        }
+        if(page.getMQuantity3().getObject()!=null && page.getMUnitPrice3().getObject()!=null){
+            add(new Label("calcAmountOfMoney3", calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3())));
+        }
+        else{
+            add(new Label("calcAmountOfMoney3", "３の単価または数量に空欄があります"));
+        }
+        if(page.getMQuantity4().getObject()!=null && page.getMUnitPrice4().getObject()!=null){
+            add(new Label("calcAmountOfMoney4", calcAmountOfMoney(page.getMQuantity4(), page.getMUnitPrice4())));
+        }
+        else{
+            add(new Label("calcAmountOfMoney4", "４の単価または数量に空欄があります"));
+        }
+        if(page.getMQuantity5().getObject()!=null && page.getMUnitPrice5().getObject()!=null){
+            add(new Label("calcAmountOfMoney5", calcAmountOfMoney(page.getMQuantity5(), page.getMUnitPrice5())));
+        }
+        else{
+            add(new Label("calcAmountOfMoney5", "５の単価または数量に空欄があります"));
+        }
     }
 
     public void formerPage(HomePage page){
