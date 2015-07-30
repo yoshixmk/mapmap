@@ -32,13 +32,12 @@ public class PrintPage extends WebPage{
         add(new Label("unitPriceValue3", page.getMUnitPrice3()));
         add(new Label("unitPriceValue4", page.getMUnitPrice4()));
         add(new Label("unitPriceValue5", page.getMUnitPrice5()));
-        add(new Label("amountOfMoneyValue1", page.getMAmountOfMoney1()));
-        add(new Label("amountOfMoneyValue2", page.getMAmountOfMoney2()));
-        add(new Label("amountOfMoneyValue3", page.getMAmountOfMoney3()));
-        add(new Label("amountOfMoneyValue4", page.getMAmountOfMoney4()));
-        add(new Label("amountOfMoneyValue5", page.getMAmountOfMoney5()));
 
         add(new Label("calcAmountOfMoney1", calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1())));
+        add(new Label("calcAmountOfMoney2", calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2())));
+        add(new Label("calcAmountOfMoney3", calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3())));
+        add(new Label("calcAmountOfMoney4", calcAmountOfMoney(page.getMQuantity4(), page.getMUnitPrice4())));
+        add(new Label("calcAmountOfMoney5", calcAmountOfMoney(page.getMQuantity5(), page.getMUnitPrice5())));
     }
 
     public void formerPage(HomePage page){

@@ -28,11 +28,6 @@ public class HomePage extends WebPage {
 	private Model mUnitPrice3 = new Model();
 	private Model mUnitPrice4 = new Model();
 	private Model mUnitPrice5 = new Model();
-	private Model mAmountOfMoney1 = new Model();
-	private Model mAmountOfMoney2 = new Model();
-	private Model mAmountOfMoney3 = new Model();
-	private Model mAmountOfMoney4 = new Model();
-	private Model mAmountOfMoney5 = new Model();
 	private Form form = new Form("form") {
 		private static final long serialVersionUID = -1700095884500348972L;
 
@@ -115,21 +110,6 @@ public class HomePage extends WebPage {
 		field = new TextField("unitPrice5", mUnitPrice5);
 		field.setOutputMarkupId(true);
 		form.add(field);//単価
-		field = new TextField("amountOfMoney1", mAmountOfMoney1);
-		field.setOutputMarkupId(true);
-		form.add(field);//金額
-		field = new TextField("amountOfMoney2", mAmountOfMoney2);
-		field.setOutputMarkupId(true);
-		form.add(field);//金額
-		field = new TextField("amountOfMoney3", mAmountOfMoney3);
-		field.setOutputMarkupId(true);
-		form.add(field);//金額
-		field = new TextField("amountOfMoney4", mAmountOfMoney4);
-		field.setOutputMarkupId(true);
-		form.add(field);//金額
-		field = new TextField("amountOfMoney5", mAmountOfMoney5);
-		field.setOutputMarkupId(true);
-		form.add(field);//金額
 
 
 		// TODO Add your page's components here
@@ -189,20 +169,5 @@ public class HomePage extends WebPage {
 	}
 	public Model getMUnitPrice5() {
 		return mUnitPrice5;
-	}
-	public Model getMAmountOfMoney1() {
-		return mAmountOfMoney1;
-	}
-	public Model getMAmountOfMoney2() {
-		return mAmountOfMoney2;
-	}
-	public Model getMAmountOfMoney3() {
-		return mAmountOfMoney3;
-	}
-	public Model getMAmountOfMoney4() {
-		return mAmountOfMoney4;
-	}
-	public Model getMAmountOfMoney5() {
-		return mAmountOfMoney5;
 	}
 }
