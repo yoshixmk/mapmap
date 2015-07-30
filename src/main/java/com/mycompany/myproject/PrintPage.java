@@ -2,6 +2,7 @@ package com.mycompany.myproject;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.model.Model;
 
 /**
  * Created by yoshihiro on 15/07/28.
@@ -36,9 +37,14 @@ public class PrintPage extends WebPage{
         add(new Label("amountOfMoneyValue3", page.getMAmountOfMoney3()));
         add(new Label("amountOfMoneyValue4", page.getMAmountOfMoney4()));
         add(new Label("amountOfMoneyValue5", page.getMAmountOfMoney5()));
+
+        add(new Label("calcAmountOfMoney1", calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1())));
     }
 
     public void formerPage(HomePage page){
         formerPage = page;
+    }
+    public Integer calcAmountOfMoney(Model quantityValue, Model unitPriceValue){
+        return Integer.parseInt(quantityValue.getObject().toString()) * Integer.parseInt(unitPriceValue.getObject().toString());
     }
 }
