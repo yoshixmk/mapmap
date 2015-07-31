@@ -1,0 +1,31 @@
+table {
+    border-collapse: collapse;
+    width:100%;
+}
+th.t_top {
+    border-top: #be1309 4px solid;
+}
+th {
+    border-right: #e3e3e3 1px dotted;
+    border-bottom: #e3e3e3 1px dotted;
+    text-align: left;
+    padding: 10px;
+    font-weight: normal;
+}
+td.t_top {
+    border-top: #b3b3b3 4px solid;
+}
+td {
+    border-bottom: #e3e3e3 1px dotted;
+    text-align: left;
+    padding: 10px;
+}
+
+#company-information-left {
+    width: 50%;
+    float: left;
+}
+#company-information-right {
+    width: 50%;
+    float: right;
+}

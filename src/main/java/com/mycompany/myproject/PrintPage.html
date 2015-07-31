@@ -3,13 +3,46 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>PrintPage</title>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="print-style.css" type="text/css" media="screen" title="Stylesheet" />
     <link rel="shortcut icon" href="fabicon.ico" >
 </head>
 <body>
-    <span wicket:id="nextMessage">2ページ目のメッセージ</span><br>
-    <span wicket:id="orderingCompanyValue">入力された値</span><br>
-    <span wicket:id="orderingCompanyAddressValue">入力された値</span><br>
-    <span wicket:id="orderingContactPersonNameValue">入力された値</span><br>
+    <h1>御見積書</h1>
+    <div id="company-information-left">
+        <span wicket:id="orderingCompanyAddressValue">入力された値</span><br><br>
+        <span wicket:id="orderingCompanyValue">入力された値</span><br><br>
+        <span wicket:id="orderingContactPersonNameValue">入力された値</span><br>
+    </div>
+    <div id="company-information-right">
+        <span wicket:id="todayDate">今日の日付</span><br>
+        <p>サンプル株式会社</p><br>
+        <p>〒000-0000</p>
+        <p>東京都渋谷区 恵比寿丸○◯丁目××</p>
+    </div>
+    <table summary="会社案内表">
+        <!-- border="1" -->
+        <tr>
+            <th class="t_top" width="180">会社名</th>
+            <td class="t_top">株式会社○○○</td>
+        </tr>
+        <tr>
+            <th>代表者名</th>
+            <td>山本　太郎</td>
+        </tr>
+        <tr>
+            <th>所在地</th>
+            <td>〒000-0000　東京都新宿区西新宿00-00</td>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td>000-0000-0000</td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td>000@000.com</td>
+        </tr>
+    </table>
 
     <span wicket:id="productItemValue1">入力された値</span><br>
     <span wicket:id="quantityValue1">入力された値</span><br>

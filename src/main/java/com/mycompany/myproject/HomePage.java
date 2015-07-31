@@ -45,15 +45,10 @@ public class HomePage extends WebPage {
 		Button nextButton = new Button("nextButton") {
 			private static final long serialVersionUID = 1L;
 			public void onSubmit() {
-//				PrintPage resultPrintPage = new PrintPage((HomePage) this.getParent());
-//				setResponsePage(resultPrintPage);
-//				setResponsePage((HomePage) this.getParent());
 			}
 		};
 		form.add(nextButton);
 //		super.add(form);
-
-		// ここから追加分
 
 		// フォームにテキストフィールドを追加
 		TextField field = new TextField("orderingCompany", mOrderingCompany);

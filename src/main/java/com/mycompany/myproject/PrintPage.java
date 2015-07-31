@@ -3,6 +3,7 @@ package com.mycompany.myproject;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.util.time.Time;
 
 /**
  * Created by yoshihiro on 15/07/28.
@@ -10,13 +11,14 @@ import org.apache.wicket.model.Model;
 public class PrintPage extends WebPage{
     private static final long serialVersionUID = 1L;
     private WebPage formerPage;
+    private String[] today = Time.now().toString().split("[.-]");
 
     public PrintPage(HomePage page) {
         this.formerPage=page;
-        add(new Label("nextMessage", "これは2ページ目です。"));
         add(new Label("orderingCompanyValue", page.getMOrderingCompany()));
         add(new Label("orderingCompanyAddressValue", page.getMOrderingCompanyAddress()));
         add(new Label("orderingContactPersonNameValue", page.getMOrderingContactPersonName()));
+        add(new Label("todayDate", today[0]+"年"+today[1]+"月"+today[2]+"日"));
         add(new Label("productItemValue1", page.getMProductItem1()));
         add(new Label("productItemValue2", page.getMProductItem2()));
         add(new Label("productItemValue3", page.getMProductItem3()));
