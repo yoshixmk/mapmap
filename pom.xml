@@ -89,6 +89,35 @@
 			<version>${jetty.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!--  wicket-bootstrap core maven dependency  -->
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-core</artifactId>
+			<version>0.9.7</version>
+		</dependency>
+
+		<!--  wicket-bootstrap for all extensions  -->
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-extensions</artifactId>
+			<version>0.9.7</version>
+		</dependency>
+
+		<!--  wicket-bootstrap for all themes  -->
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-themes</artifactId>
+			<version>0.9.7</version>
+		</dependency>
+
+		<!--  wicket-bootstrap, using a less compiler  -->
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-less</artifactId>
+			<version>0.9.7</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<resources>

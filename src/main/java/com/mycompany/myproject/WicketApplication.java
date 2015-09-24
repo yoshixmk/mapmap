@@ -1,5 +1,6 @@
 package com.mycompany.myproject;
 
+import de.agilecoders.wicket.core.Bootstrap;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
@@ -29,5 +30,11 @@ public class WicketApplication extends WebApplication
 		super.init();
 
 		// add your configuration here
+
+		// if you want to customize bootstrap:
+		//BootstrapSettings settings = new BootstrapSettings();
+		//settings.setXXX(...);
+		// best place to do this is in Application#init()
+		Bootstrap.install(this);
 	}
 }
