@@ -48,7 +48,6 @@ public class HomePage extends WebPage {
 			}
 		};
 		form.add(nextButton);
-//		super.add(form);
 
 		// フォームにテキストフィールドを追加
 		TextField field = new TextField("orderingCompany", mOrderingCompany);
