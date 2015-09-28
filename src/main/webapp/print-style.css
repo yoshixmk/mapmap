@@ -1,3 +1,9 @@
+h1, h2, h3 {
+    font-family: 'Yanone Kaffeesatz', arial, serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 table {
     border-collapse: collapse;
     width:100%;
@@ -24,8 +30,11 @@ td {
 #company-information-left {
     width: 50%;
     float: left;
+    padding-left: 15%;
 }
 #company-information-right {
     width: 50%;
-    float: right;
+    float: left;
+    padding-left: 20
+    %;
 }

@@ -1,5 +1,8 @@
 body, p, li, a { font-family: georgia, times, serif;font-size:13pt;}
-h1, h2, h3 { font-family: 'Yanone Kaffeesatz', arial, serif; }
+h1, h2, h3 {
+	font-family: 'Yanone Kaffeesatz', arial, serif;
+	text-align: center;
+}
 body { margin:0;padding:0;}
 #hd {
 	width : 100%;
@@ -20,9 +23,11 @@ body { margin:0;padding:0;}
 	z-index : 0;
 }
 #ft input{
+	margin-top: 25px;
 	font-family: 'Yanone Kaffeesatz', arial, serif;
 	width: 100px;
 	margin-left : 85%;
+	font-size: 23px;
 }
 #logo,#bd {
 	width : 650px;
@@ -44,10 +49,10 @@ body { margin-top : 0; padding-top : 0;}
 #logo, #logo h1 { margin-top : 0; padding-top : 0;}
 #bd {
 	position : absolute;
+	width: 66%;
 	top : 75px;
-	bottom : 75px;
-	left : 50%;
-	margin-left : -325px;
+	bottom : 20px;
+	left : 17%;
 	z-index : 1;
 	overflow: auto;
 	background-color : #fff;
