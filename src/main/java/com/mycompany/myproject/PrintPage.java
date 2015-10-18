@@ -2,8 +2,12 @@ package com.mycompany.myproject;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.util.time.Time;
+
+import java.util.ArrayList;
 
 /**
  * Created by yoshihiro on 15/07/28.
@@ -64,6 +68,19 @@ public class PrintPage extends WebPage{
         else{
             add(new Label("calcAmountOfMoney5", "５の単価または数量に空欄があります"));
         }
+
+        ArrayList<String> list =
+                new ArrayList<String>();
+        list.add("ユーザー1");
+        list.add("ユーザー2");
+        list.add("ユーザー3");
+        add(new ListView<String>("list", list) {
+                    @Override
+                    protected void populateItem(ListItem<String> item) {
+                        String name = item.getModelObject();
+                        item.add(new Label("name", name));
+                    }
+                });
     }
 
     public Integer calcAmountOfMoney(Model quantityValue, Model unitPriceValue){

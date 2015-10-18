@@ -9,19 +9,21 @@
 </head>
 <body>
     <h1>御見積書</h1>
-    <div id="company-information-left">
-        <span wicket:id="orderingCompanyAddressValue">入力された値</span><br><br>
+    <div id="company-information-left" class="font-nomal">
         <span wicket:id="orderingCompanyValue">入力された値</span><br><br>
-        <span wicket:id="orderingContactPersonNameValue">入力された値</span><br>
+        <span wicket:id="orderingCompanyAddressValue">入力された値</span><br><br>
+        <span wicket:id="orderingContactPersonNameValue">入力された値</span> 様<br>
     </div>
     <div id="company-information-right">
-        <span wicket:id="todayDate">今日の日付</span><br>
-        <p>サンプル株式会社</p><br>
+        <span wicket:id="todayDate">今日の日付</span><br><br>
+        <p>サンプル株式会社</p>
         <p>〒000-0000</p>
         <p>東京都渋谷区 恵比寿丸○◯丁目××</p>
     </div>
+    <div id="sum-information" class="font-nomal">
+        <!--<span wicket:id="sumValue">入力された値</span><br><br>-->
+    </div>
     <table summary="会社案内表">
-        <!-- border="1" -->
         <tr>
             <th class="t_top" width="180">会社名</th>
             <td class="t_top">株式会社○○○</td>
@@ -44,6 +46,16 @@
         </tr>
     </table>
 
+    <table>
+        <tbody>
+        <tr>
+            <td>ユーザー名</td>
+        </tr>
+        <tr wicket:id="list">
+            <td><span  wicket:id="name"></span></td>
+        </tr>
+        </tbody>
+    </table>
     <span wicket:id="productItemValue1">入力された値</span><br>
     <span wicket:id="quantityValue1">入力された値</span><br>
     <span wicket:id="unitPriceValue1">入力された値</span><br>

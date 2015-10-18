@@ -9,7 +9,7 @@ table {
     width:100%;
 }
 th.t_top {
-    border-top: #be1309 4px solid;
+    border-top: #b3b3b3 4px solid;
 }
 th {
     border-right: #e3e3e3 1px dotted;
@@ -28,13 +28,14 @@ td {
 }
 
 #company-information-left {
+    font-size : large;
     width: 50%;
     float: left;
     padding-left: 15%;
 }
 #company-information-right {
+    font-size: large;
     width: 50%;
     float: left;
-    padding-left: 20
-    %;
+    padding-left: 20%;
 }
