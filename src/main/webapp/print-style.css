@@ -1,9 +1,18 @@
+h1, h2, h3 {
+    font-family: 'Yanone Kaffeesatz', arial, serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 table {
     border-collapse: collapse;
     width:100%;
 }
+thead {
+    background: #eee;
+}
 th.t_top {
-    border-top: #be1309 4px solid;
+    border-top: #b3b3b3 4px solid;
 }
 th {
     border-right: #e3e3e3 1px dotted;
@@ -22,10 +31,23 @@ td {
 }
 
 #company-information-left {
+    font-size : large;
     width: 50%;
     float: left;
+    padding-left: 15%;
 }
 #company-information-right {
+    font-size: large;
     width: 50%;
-    float: right;
+    float: left;
+    padding-left: 20%;
+}
+
+#product-item-table{
+    padding-top: 20px;
+}
+
+#sum-information{
+    width: 35%;
+    padding-top: 20px;
 }
