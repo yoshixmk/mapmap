@@ -28,13 +28,14 @@
         <div id="sum-information" class="font-nomal">
             <table class="table table-bordered">
                 <tr>
-                    <th class="t_top" width="180">御見積金額</th>
-                    <td class="t_top">¥ <span wicket:id="sumPrice">見積合計</span></td>
+                    <th width="180">御見積金額</th>
+                    <td>¥ <span wicket:id="sumPrice">見積合計</span></td>
                 </tr>
             </table>
         </div>
     </div>
     <div id="product-item-table" class="container">
+        <p class="horizontal-line"></p>
         <table class="table table-bordered">
             <thead>
                 <tr><td>項目</td><td>数量</td><td>単価</td><td>金額</td></tr>
@@ -44,7 +45,7 @@
                 <td><span  wicket:id="productItem">項目の内容</span></td>
                 <td><span wicket:id="quantity">数量の内容</span></td>
                 <td><span wicket:id="unitPrice">単価の内容</span></td>
-                <td><span wicket:id="subtotalPrice">単価の内容</span></td>
+                <td><span wicket:id="subtotalPrice">数量×単価の内容</span></td>
             </tr>
             </tbody>
         </table>

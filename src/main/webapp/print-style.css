@@ -11,8 +11,9 @@ table {
 thead {
     background: #eee;
 }
-th.t_top {
+.horizontal-line{
     border-top: #b3b3b3 4px solid;
+    padding-bottom: 20px;
 }
 th {
     border-right: #e3e3e3 1px dotted;
@@ -43,11 +44,11 @@ td {
     padding-left: 20%;
 }
 
-#product-item-table{
+#sum-information{
+    width: 35%;
     padding-top: 20px;
 }
 
-#sum-information{
-    width: 35%;
+#product-item-table{
     padding-top: 20px;
 }
