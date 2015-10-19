@@ -20,47 +20,33 @@
         <p>〒000-0000</p>
         <p>東京都渋谷区 恵比寿丸○◯丁目××</p>
     </div>
-    <div id="sum-information" class="font-nomal">
+    <!--<div id="sum-information" class="font-nomal">-->
         <!--<span wicket:id="sumValue">入力された値</span><br><br>-->
+    <!--</div>-->
+    <div class="container">
+        <div id="sum-information" class="font-nomal">
+            <table class="table table-bordered">
+                <tr>
+                    <th class="t_top" width="180">御見積金額</th>
+                    <td class="t_top">¥1234567</td><!-- sumを表示-->
+                </tr>
+            </table>
+        </div>
     </div>
-    <table summary="会社案内表">
-        <tr>
-            <th class="t_top" width="180">会社名</th>
-            <td class="t_top">株式会社○○○</td>
-        </tr>
-        <tr>
-            <th>代表者名</th>
-            <td>山本　太郎</td>
-        </tr>
-        <tr>
-            <th>所在地</th>
-            <td>〒000-0000　東京都新宿区西新宿00-00</td>
-        </tr>
-        <tr>
-            <th>電話番号</th>
-            <td>000-0000-0000</td>
-        </tr>
-        <tr>
-            <th>メールアドレス</th>
-            <td>000@000.com</td>
-        </tr>
-    </table>
-
-    <table>
-        <tbody>
-        <tr>
-            <td>項目</td>
-            <td>数量</td>
-            <td>単価</td>
-            <td>金額</td>
-        </tr>
-        <tr wicket:id="productItemList">
-            <td><span  wicket:id="productItem">項目の列リスト</span></td>
-            <td><span wicket:id="quantity">数量の列リスト</span></td>
-            <td><span wicket:id="unitPrice">数量の列リスト</span></td>
-        </tr>
-        </tbody>
-    </table>
+    <div id="product-item-table" class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr><td>項目</td><td>数量</td><td>単価</td><td>金額</td></tr>
+            </thead>
+            <tbody>
+            <tr wicket:id="productItemList">
+                <td><span  wicket:id="productItem">項目の列リスト</span></td>
+                <td><span wicket:id="quantity">数量の列リスト</span></td>
+                <td><span wicket:id="unitPrice">数量の列リスト</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     <span wicket:id="productItemValue1">入力された値</span><br>
     <span wicket:id="quantityValue1">入力された値</span><br>
     <span wicket:id="unitPriceValue1">入力された値</span><br>

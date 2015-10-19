@@ -39,3 +39,12 @@ td {
     float: left;
     padding-left: 20%;
 }
+
+#product-item-table{
+    padding-top: 20px;
+}
+
+#sum-information{
+    width: 35%;
+    padding-top: 20px;
+}
