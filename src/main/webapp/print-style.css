@@ -27,7 +27,6 @@ td.t_top {
 }
 td {
     border-bottom: #e3e3e3 1px dotted;
-    text-align: left;
     padding: 10px;
 }
 
@@ -48,6 +47,10 @@ td {
     width: 35%;
     padding-top: 20px;
     text-align: center;
+}
+
+.fix-table-layout{
+    table-layout: fixed;
 }
 
 #product-item-table{
