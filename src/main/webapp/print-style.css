@@ -12,7 +12,7 @@ thead {
     background: #eee;
 }
 .horizontal-line{
-    border-top: #b3b3b3 4px solid;
+    border-top: #eee 4px solid;
     padding-bottom: 20px;
 }
 th {
@@ -47,6 +47,7 @@ td {
 #sum-information{
     width: 35%;
     padding-top: 20px;
+    text-align: center;
 }
 
 #product-item-table{

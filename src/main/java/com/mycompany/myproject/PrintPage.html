@@ -21,15 +21,12 @@
         <p>東京都渋谷区</p>
         <p>恵比寿○○丁目××</p>
     </div>
-    <!--<div id="sum-information" class="font-nomal">-->
-        <!--<span wicket:id="sumValue">入力された値</span><br><br>-->
-    <!--</div>-->
     <div class="container">
         <div id="sum-information" class="font-nomal">
             <table class="table table-bordered">
                 <tr>
-                    <th width="180">御見積金額</th>
-                    <td>¥ <span wicket:id="sumPrice">見積合計</span></td>
+                    <th class="text-center">御見積金額</th>
+                    <td class="text-center">¥ <span wicket:id="sumPrice">見積合計</span></td>
                 </tr>
             </table>
         </div>
@@ -37,15 +34,15 @@
     <div id="product-item-table" class="container">
         <p class="horizontal-line"></p>
         <table class="table table-bordered">
-            <thead>
+            <thead class="text-center">
                 <tr><td>項目</td><td>数量</td><td>単価</td><td>金額</td></tr>
             </thead>
             <tbody>
             <tr wicket:id="productItemList">
                 <td><span  wicket:id="productItem">項目の内容</span></td>
-                <td><span wicket:id="quantity">数量の内容</span></td>
-                <td><span wicket:id="unitPrice">単価の内容</span></td>
-                <td><span wicket:id="subtotalPrice">数量×単価の内容</span></td>
+                <td class="text-right"><span wicket:id="quantity">数量の内容</span></td>
+                <td class="text-right"><span wicket:id="unitPrice">単価の内容</span></td>
+                <td class="text-right"><span wicket:id="subtotalPrice">数量×単価の内容</span></td>
             </tr>
             </tbody>
         </table>
