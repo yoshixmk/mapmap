@@ -10,5 +10,6 @@ public class ProductItem {
     private String productItem;
     private String quantity;
     private String unitPrice;
+    private String subtotalPrice;
 }
 

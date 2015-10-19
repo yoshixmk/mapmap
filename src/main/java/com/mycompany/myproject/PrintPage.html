@@ -18,7 +18,8 @@
         <span wicket:id="todayDate">今日の日付</span><br><br>
         <p>サンプル株式会社</p>
         <p>〒000-0000</p>
-        <p>東京都渋谷区 恵比寿丸○◯丁目××</p>
+        <p>東京都渋谷区</p>
+        <p>恵比寿○○丁目××</p>
     </div>
     <!--<div id="sum-information" class="font-nomal">-->
         <!--<span wicket:id="sumValue">入力された値</span><br><br>-->
@@ -28,7 +29,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th class="t_top" width="180">御見積金額</th>
-                    <td class="t_top">¥1234567</td><!-- sumを表示-->
+                    <td class="t_top">¥ <span wicket:id="sumPrice">見積合計</span></td>
                 </tr>
             </table>
         </div>
@@ -40,36 +41,13 @@
             </thead>
             <tbody>
             <tr wicket:id="productItemList">
-                <td><span  wicket:id="productItem">項目の列リスト</span></td>
-                <td><span wicket:id="quantity">数量の列リスト</span></td>
-                <td><span wicket:id="unitPrice">数量の列リスト</span></td>
+                <td><span  wicket:id="productItem">項目の内容</span></td>
+                <td><span wicket:id="quantity">数量の内容</span></td>
+                <td><span wicket:id="unitPrice">単価の内容</span></td>
+                <td><span wicket:id="subtotalPrice">単価の内容</span></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <span wicket:id="productItemValue1">入力された値</span><br>
-    <span wicket:id="quantityValue1">入力された値</span><br>
-    <span wicket:id="unitPriceValue1">入力された値</span><br>
-    <span wicket:id="calcAmountOfMoney1">計算した値</span><br>
-
-    <span wicket:id="productItemValue2">入力された値</span><br>
-    <span wicket:id="quantityValue2">入力された値</span><br>
-    <span wicket:id="unitPriceValue2">入力された値</span><br>
-    <span wicket:id="calcAmountOfMoney2">計算した値</span><br>
-
-    <span wicket:id="productItemValue3">入力された値</span><br>
-    <span wicket:id="quantityValue3">入力された値</span><br>
-    <span wicket:id="unitPriceValue3">入力された値</span><br>
-    <span wicket:id="calcAmountOfMoney3">計算した値</span><br>
-
-    <span wicket:id="productItemValue4">入力された値</span><br>
-    <span wicket:id="quantityValue4">入力された値</span><br>
-    <span wicket:id="unitPriceValue4">入力された値</span><br>
-    <span wicket:id="calcAmountOfMoney4">計算した値</span><br>
-
-    <span wicket:id="productItemValue5">入力された値</span><br>
-    <span wicket:id="quantityValue5">入力された値</span><br>
-    <span wicket:id="unitPriceValue5">入力された値</span><br>
-    <span wicket:id="calcAmountOfMoney5">計算した値</span><br>
 </body>
 </html>
