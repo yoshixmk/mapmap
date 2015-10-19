@@ -2,7 +2,7 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>PrintPage</title>
+    <title>Quote Generator PrintPage</title>
     <link rel="stylesheet" href="print-style.css" type="text/css" media="screen,print" title="Stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet' type='text/css' />
     <link rel="shortcut icon" href="fabicon.ico" >
@@ -49,10 +49,15 @@
     <table>
         <tbody>
         <tr>
-            <td>ユーザー名</td>
+            <td>項目</td>
+            <td>数量</td>
+            <td>単価</td>
+            <td>金額</td>
         </tr>
-        <tr wicket:id="list">
-            <td><span  wicket:id="name"></span></td>
+        <tr wicket:id="productItemList">
+            <td><span  wicket:id="productItem">項目の列リスト</span></td>
+            <td><span wicket:id="quantity">数量の列リスト</span></td>
+            <td><span wicket:id="unitPrice">数量の列リスト</span></td>
         </tr>
         </tbody>
     </table>
