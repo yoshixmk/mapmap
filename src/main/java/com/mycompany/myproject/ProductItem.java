@@ -9,8 +9,8 @@ import java.io.Serializable;
  */
 @Data
 public class ProductItem implements Serializable{
-    private String productItem;
-    private String quantity;
-    private String unitPrice;
-    private String subtotalPrice;
+    private String productItemName;
+    private Integer quantity;
+    private Integer unitPrice;
+//    private String subtotalPrice;
 }

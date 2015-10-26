@@ -27,57 +27,60 @@ public class PrintPage extends WebPage{
         add(new Label("todayDate", today[0]+"年"+today[1]+"月"+today[2]+"日"));
 
         NumberFormat nfNum = NumberFormat.getNumberInstance();
-        ArrayList<ProductItem> productItemList = new ArrayList<ProductItem>();
-        if(page.getMProductItem1().getObject()!=null && page.getMQuantity1().getObject()!=null && page.getMUnitPrice1().getObject()!=null) {
-            ProductItem item1 = new ProductItem();
-            item1.setProductItem(page.getMProductItem1().getObject().toString());
-            item1.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity1().getObject().toString())));
-            item1.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice1().getObject().toString())));
-            int subtotalPrice = calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1());
-            item1.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
-            sumPrice += subtotalPrice;
-            productItemList.add(item1);
-        }
-        if(page.getMProductItem2().getObject()!=null && page.getMQuantity2().getObject()!=null && page.getMUnitPrice2().getObject()!=null) {
-            ProductItem item2 = new ProductItem();
-            item2.setProductItem(page.getMProductItem2().getObject().toString());
-            item2.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity2().getObject().toString())));
-            item2.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice2().getObject().toString())));
-            int subtotalPrice = calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2());
-            item2.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
-            sumPrice += subtotalPrice;
-            productItemList.add(item2);
-        }
-        if(page.getMProductItem3().getObject()!=null && page.getMQuantity3().getObject()!=null && page.getMUnitPrice3().getObject()!=null) {
-            ProductItem item3 = new ProductItem();
-            item3.setProductItem(page.getMProductItem3().getObject().toString());
-            item3.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity3().getObject().toString())));
-            item3.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice3().getObject().toString())));
-            int subtotalPrice = calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3());
-            item3.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
-            sumPrice += subtotalPrice;
-            productItemList.add(item3);
-        }
-        if(page.getMProductItem4().getObject()!=null && page.getMQuantity4().getObject()!=null && page.getMUnitPrice4().getObject()!=null) {
-            ProductItem item4 = new ProductItem();
-            item4.setProductItem(page.getMProductItem4().getObject().toString());
-            item4.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity4().getObject().toString())));
-            item4.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice4().getObject().toString())));
-            int subtotalPrice = calcAmountOfMoney(page.getMQuantity4(), page.getMUnitPrice4());
-            item4.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
-            sumPrice += subtotalPrice;
-            productItemList.add(item4);
-        }
-        if(page.getMProductItem5().getObject()!=null && page.getMQuantity5().getObject()!=null && page.getMUnitPrice5().getObject()!=null) {
-            ProductItem item5 = new ProductItem();
-            item5.setProductItem(page.getMProductItem5().getObject().toString());
-            item5.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity5().getObject().toString())));
-            item5.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice5().getObject().toString())));
-            int subtotalPrice = calcAmountOfMoney(page.getMQuantity5(), page.getMUnitPrice5());
-            item5.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
-            sumPrice += subtotalPrice;
-            productItemList.add(item5);
-        }
+
+        ArrayList<ProductItem> productItemList;// = new ArrayList<ProductItem>();
+        productItemList = page.getProductItemList();
+
+//        if(page.getMProductItem1().getObject()!=null && page.getMQuantity1().getObject()!=null && page.getMUnitPrice1().getObject()!=null) {
+//            ProductItem item1 = new ProductItem();
+//            item1.setProductItem(page.getMProductItem1().getObject().toString());
+//            item1.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity1().getObject().toString())));
+//            item1.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice1().getObject().toString())));
+//            int subtotalPrice = calcAmountOfMoney(page.getMQuantity1(), page.getMUnitPrice1());
+//            item1.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
+//            sumPrice += subtotalPrice;
+//            productItemList.add(item1);
+//        }
+//        if(page.getMProductItem2().getObject()!=null && page.getMQuantity2().getObject()!=null && page.getMUnitPrice2().getObject()!=null) {
+//            ProductItem item2 = new ProductItem();
+//            item2.setProductItem(page.getMProductItem2().getObject().toString());
+//            item2.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity2().getObject().toString())));
+//            item2.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice2().getObject().toString())));
+//            int subtotalPrice = calcAmountOfMoney(page.getMQuantity2(), page.getMUnitPrice2());
+//            item2.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
+//            sumPrice += subtotalPrice;
+//            productItemList.add(item2);
+//        }
+//        if(page.getMProductItem3().getObject()!=null && page.getMQuantity3().getObject()!=null && page.getMUnitPrice3().getObject()!=null) {
+//            ProductItem item3 = new ProductItem();
+//            item3.setProductItem(page.getMProductItem3().getObject().toString());
+//            item3.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity3().getObject().toString())));
+//            item3.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice3().getObject().toString())));
+//            int subtotalPrice = calcAmountOfMoney(page.getMQuantity3(), page.getMUnitPrice3());
+//            item3.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
+//            sumPrice += subtotalPrice;
+//            productItemList.add(item3);
+//        }
+//        if(page.getMProductItem4().getObject()!=null && page.getMQuantity4().getObject()!=null && page.getMUnitPrice4().getObject()!=null) {
+//            ProductItem item4 = new ProductItem();
+//            item4.setProductItem(page.getMProductItem4().getObject().toString());
+//            item4.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity4().getObject().toString())));
+//            item4.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice4().getObject().toString())));
+//            int subtotalPrice = calcAmountOfMoney(page.getMQuantity4(), page.getMUnitPrice4());
+//            item4.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
+//            sumPrice += subtotalPrice;
+//            productItemList.add(item4);
+//        }
+//        if(page.getMProductItem5().getObject()!=null && page.getMQuantity5().getObject()!=null && page.getMUnitPrice5().getObject()!=null) {
+//            ProductItem item5 = new ProductItem();
+//            item5.setProductItem(page.getMProductItem5().getObject().toString());
+//            item5.setQuantity(nfNum.format(Integer.parseInt(page.getMQuantity5().getObject().toString())));
+//            item5.setUnitPrice(nfNum.format(Integer.parseInt(page.getMUnitPrice5().getObject().toString())));
+//            int subtotalPrice = calcAmountOfMoney(page.getMQuantity5(), page.getMUnitPrice5());
+//            item5.setSubtotalPrice(nfNum.format(Integer.parseInt(String.valueOf(subtotalPrice))));
+//            sumPrice += subtotalPrice;
+//            productItemList.add(item5);
+//        }
         add(new ListView<ProductItem>("productItemList", productItemList) {
             @Override
             protected void populateItem(ListItem<ProductItem> item) {
@@ -85,7 +88,7 @@ public class PrintPage extends WebPage{
                 item.add(new Label("productItem", productItem.getProductItem()));
                 item.add(new Label("quantity", productItem.getQuantity()));
                 item.add(new Label("unitPrice", productItem.getUnitPrice()));
-                item.add(new Label("subtotalPrice", productItem.getSubtotalPrice()));
+//                item.add(new Label("subtotalPrice", productItem.getSubtotalPrice()));
             }
         });
 
