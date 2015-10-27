@@ -12,5 +12,13 @@ public class ProductItem implements Serializable{
     private String productItemName;
     private Integer quantity;
     private Integer unitPrice;
-//    private String subtotalPrice;
+
+    Integer calcSubtotalPrice(){
+        if(quantity==null || unitPrice==null) {
+            return null;
+        }
+        else{
+            return quantity * unitPrice;
+        }
+    }
 }

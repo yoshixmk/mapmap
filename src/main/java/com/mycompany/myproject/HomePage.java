@@ -74,62 +74,11 @@ public class HomePage extends WebPage {
 			@Override
 			protected void populateItem(ListItem<ProductItem> listItem) {
 				ProductItem productItem = listItem.getModelObject();
-//				listItem.add(new TextField("productItemName", productItem.getProductItemName()));
-//				listItem.add(new TextField("quantity", listItem.getModelObject()));
-//				listItem.add(new TextField("unitPrice", productItem.getUnitPrice()));
 				listItem.add(new TextField<String>("productItemName", new PropertyModel<String>(productItem, "productItemName")));
 				listItem.add(new TextField<Integer>("quantity", new PropertyModel<Integer>(productItem, "quantity")));
 				listItem.add(new TextField<Integer>("unitPrice", new PropertyModel<Integer>(productItem, "unitPrice")));
-//                listItem.add(new Label("subtotalPrice", productItem.getSubtotalPrice()));
 			}
 		});
-
-//		field = new TextField("productItem1", mProductItem1);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//項目
-//		field = new TextField("productItem2", mProductItem2);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//項目
-//		field = new TextField("productItem3", mProductItem3);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//項目
-//		field = new TextField("productItem4", mProductItem4);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//項目
-//		field = new TextField("productItem5", mProductItem5);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//項目
-//		field = new TextField("quantity1", mQuantity1);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//数量
-//		field = new TextField("quantity2", mQuantity2);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//数量
-//		field = new TextField("quantity3", mQuantity3);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//数量
-//		field = new TextField("quantity4", mQuantity4);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//数量
-//		field = new TextField("quantity5", mQuantity5);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//数量
-//		field = new TextField("unitPrice1", mUnitPrice1);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//単価
-//		field = new TextField("unitPrice2", mUnitPrice2);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//単価
-//		field = new TextField("unitPrice3", mUnitPrice3);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//単価
-//		field = new TextField("unitPrice4", mUnitPrice4);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//単価
-//		field = new TextField("unitPrice5", mUnitPrice5);
-//		field.setOutputMarkupId(true);
-//		form.add(field);//単価
-
 
 		// TODO Add your page's components here
 
@@ -147,49 +96,4 @@ public class HomePage extends WebPage {
 	public ArrayList<ProductItem> getProductItemList() {
 		return productItemList;
 	}
-//	public Model getMProductItem1() {
-//		return mProductItem1;
-//	}
-//	public Model getMProductItem2() {
-//		return mProductItem2;
-//	}
-//	public Model getMProductItem3() {
-//		return mProductItem3;
-//	}
-//	public Model getMProductItem4() {
-//		return mProductItem4;
-//	}
-//	public Model getMProductItem5() {
-//		return mProductItem5;
-//	}
-//	public Model getMQuantity1() {
-//		return mQuantity1;
-//	}
-//	public Model getMQuantity2() {
-//		return mQuantity2;
-//	}
-//	public Model getMQuantity3() {
-//		return mQuantity3;
-//	}
-//	public Model getMQuantity4() {
-//		return mQuantity4;
-//	}
-//	public Model getMQuantity5() {
-//		return mQuantity5;
-//	}
-//	public Model getMUnitPrice1() {
-//		return mUnitPrice1;
-//	}
-//	public Model getMUnitPrice2() {
-//		return mUnitPrice2;
-//	}
-//	public Model getMUnitPrice3() {
-//		return mUnitPrice3;
-//	}
-//	public Model getMUnitPrice4() {
-//		return mUnitPrice4;
-//	}
-//	public Model getMUnitPrice5() {
-//		return mUnitPrice5;
-//	}
 }
