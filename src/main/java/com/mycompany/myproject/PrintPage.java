@@ -17,7 +17,8 @@ public class PrintPage extends WebPage{
     private static final long serialVersionUID = 1L;
     private WebPage formerPage;
     private String[] today = Time.now().toString().split("[.-]");
-    private int totalPrice = 0;
+    private long totalPrice = 0;
+    private int sumSubPrice = 0;
 
     public PrintPage(final HomePage page) {
         this.formerPage=page;
@@ -58,13 +59,19 @@ public class PrintPage extends WebPage{
         });
         for(ProductItem list : productItemList){
             if(list.calcSubtotalPrice() != null) {
-                calcTotalPrice(list.calcSubtotalPrice());
+                calcSumSubPrice(list.calcSubtotalPrice());
             }
         }
-        add(new Label("totalPrice", nfNum.format(totalPrice)));
+        add(new Label("sumSubPrice", nfNum.format(sumSubPrice)));
+        add(new Label("totalPrice", nfNum.format(getTotalPrice())));
     }
 
-    private void calcTotalPrice(Integer subTotalPrice){
-        totalPrice += subTotalPrice;
+    private void calcSumSubPrice(Integer subTotalPrice){
+        sumSubPrice += subTotalPrice;
+    }
+
+    private Long getTotalPrice(){
+        totalPrice = Math.round(sumSubPrice * 1.08);
+        return totalPrice;
     }
 }
