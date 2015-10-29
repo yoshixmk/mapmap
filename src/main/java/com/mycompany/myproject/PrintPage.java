@@ -17,7 +17,7 @@ public class PrintPage extends WebPage{
     private static final long serialVersionUID = 1L;
     private WebPage formerPage;
     private String[] today = Time.now().toString().split("[.-]");
-    private int sumPrice = 0;
+    private int totalPrice = 0;
 
     public PrintPage(final HomePage page) {
         this.formerPage=page;
@@ -30,18 +30,41 @@ public class PrintPage extends WebPage{
 
         ArrayList<ProductItem> productItemList;
         productItemList = page.getProductItemList();
-
         add(new ListView<ProductItem>("productItemList", productItemList) {
             @Override
             protected void populateItem(ListItem<ProductItem> item) {
+                NumberFormat nfNum = NumberFormat.getNumberInstance();
                 ProductItem productItem = item.getModelObject();
                 item.add(new Label("productItem", productItem.getProductItemName()));
-                item.add(new Label("quantity", productItem.getQuantity()));
-                item.add(new Label("unitPrice", productItem.getUnitPrice()));
-                item.add(new Label("subtotalPrice", productItem.calcSubtotalPrice()));
+                if(productItem.getQuantity() != null) {
+                    item.add(new Label("quantity", nfNum.format(productItem.getQuantity())));
+                }
+                else{
+                    item.add(new Label("quantity", productItem.getQuantity()));
+                }
+                if(productItem.getUnitPrice() != null) {
+                    item.add(new Label("unitPrice", nfNum.format(productItem.getUnitPrice())));
+                }
+                else{
+                    item.add(new Label("unitPrice", productItem.getUnitPrice()));
+                }
+                if(productItem.calcSubtotalPrice() != null) {
+                    item.add(new Label("subtotalPrice", nfNum.format(productItem.calcSubtotalPrice())));
+                }
+                else{
+                    item.add(new Label("subtotalPrice", productItem.calcSubtotalPrice()));
+                }
             }
         });
+        for(ProductItem list : productItemList){
+            if(list.calcSubtotalPrice() != null) {
+                calcTotalPrice(list.calcSubtotalPrice());
+            }
+        }
+        add(new Label("totalPrice", nfNum.format(totalPrice)));
+    }
 
-        add(new Label("sumPrice", nfNum.format(sumPrice)));
+    private void calcTotalPrice(Integer subTotalPrice){
+        totalPrice += subTotalPrice;
     }
 }
