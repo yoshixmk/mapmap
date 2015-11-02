@@ -21,21 +21,6 @@ public class HomePage extends WebPage {
 	private Model mOrderingContactPersonName = new Model();
 	private ArrayList<ProductItem> productItemList = new ArrayList<ProductItem>();
 
-//	private Model mProductItem1 = new Model();
-//	private Model mProductItem2 = new Model();
-//	private Model mProductItem3 = new Model();
-//	private Model mProductItem4 = new Model();
-//	private Model mProductItem5 = new Model();
-//	private Model mQuantity1 = new Model();
-//	private Model mQuantity2 = new Model();
-//	private Model mQuantity3 = new Model();
-//	private Model mQuantity4 = new Model();
-//	private Model mQuantity5 = new Model();
-//	private Model mUnitPrice1 = new Model();
-//	private Model mUnitPrice2 = new Model();
-//	private Model mUnitPrice3 = new Model();
-//	private Model mUnitPrice4 = new Model();
-//	private Model mUnitPrice5 = new Model();
 	private Form form = new Form("form") {
 		private static final long serialVersionUID = -1700095884500348972L;
 
