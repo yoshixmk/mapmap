@@ -17,7 +17,6 @@ public class PrintPage extends WebPage{
     private static final long serialVersionUID = 1L;
     private WebPage formerPage;
     private String[] today = Time.now().toString().split("[.-]");
-    private long totalPrice = 0;
     private int sumSubPrice = 0;
 
     public PrintPage(final HomePage page) {
@@ -63,15 +62,25 @@ public class PrintPage extends WebPage{
             }
         }
         add(new Label("sumSubPrice", nfNum.format(sumSubPrice)));
+        add(new Label("consumptionTax", nfNum.format(getConsumptionTax())));
         add(new Label("totalPrice", nfNum.format(getTotalPrice())));
+        add(new Label("totalPrice2", nfNum.format(getTotalPrice())));
     }
 
     private void calcSumSubPrice(Integer subTotalPrice){
         sumSubPrice += subTotalPrice;
     }
 
+    private Long getConsumptionTax(){
+        long consumptionTax;
+        consumptionTax = Math.round(sumSubPrice * 0.08);
+        return consumptionTax;
+    }
+
     private Long getTotalPrice(){
-        totalPrice = Math.round(sumSubPrice * 1.08);
+        long totalPrice;
+        totalPrice = sumSubPrice + getConsumptionTax();
         return totalPrice;
     }
+
 }

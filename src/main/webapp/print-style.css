@@ -1,3 +1,16 @@
+@media print {
+    tr.vendorListHeading {
+        background-color: #1a4567 !important;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+@media print {
+    .vendorListHeading th {
+        color: white !important;
+    }
+}
+
 h1, h2, h3 {
     font-family: 'Yanone Kaffeesatz', arial, serif;
     text-align: center;
@@ -55,4 +68,13 @@ td {
 
 #product-item-table{
     padding-top: 20px;
+}
+
+#half-table{
+    margin-left: 50%;
+    width: 50%;
+}
+
+#half-table th{
+    background: #eee;
 }

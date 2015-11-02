@@ -44,8 +44,21 @@
                 <td class="text-right"><span wicket:id="unitPrice">単価の内容</span></td>
                 <td class="text-right"><span wicket:id="subtotalPrice">数量×単価の内容</span></td>
             </tr>
+            </tbody>
+        </table>
+        <table id="half-table" class="table table-bordered">
+            <tbody>
             <tr>
+                <th class="text-center">小計</th>
                 <td wicket:id="sumSubPrice">小計</td>
+            </tr>
+            <tr>
+                <th class="text-center">消費税</th>
+                <td wicket:id="consumptionTax"></td>
+            </tr>
+            <tr>
+                <th class="text-center">合計金額</th>
+                <td><span wicket:id="totalPrice2">見積合計2</span></td>
             </tr>
             </tbody>
         </table>
