@@ -82,3 +82,7 @@ td {
 #half-table th{
     background: #eee;
 }
+
+.remarks-box table{
+    height: 100px;
+}
