@@ -63,11 +63,10 @@ public class HomePage extends WebPage {
 		for(int i=0; i<5; i++) {
 			productItemList.add(new ProductItem());
 		}
+
 		form.add(new FeedbackPanel("feedbackMessage",
 				new ExactLevelFeedbackMessageFilter(FeedbackMessage.ERROR)));
-//		form.add(new FeedbackPanel("succesMessage",
-//				new ExactLevelFeedbackMessageFilter(FeedbackMessage.SUCCESS)));
-		ListView<ProductItem> listView = new ListView<ProductItem>("productItemList", productItemList) {
+		ListView<ProductItem> productItemListView = new ListView<ProductItem>("productItemList", productItemList) {
 			@Override
 			protected void populateItem(ListItem<ProductItem> listItem) {
 				ProductItem productItem = listItem.getModelObject();
@@ -78,8 +77,8 @@ public class HomePage extends WebPage {
 						.add(RangeValidator.minimum(0)));
 			}
 		};
-		listView.setReuseItems(true);
-		form.add(listView);
+		productItemListView.setReuseItems(true);
+		form.add(productItemListView);
     }
 
 	public Model getMOrderingCompany() {
