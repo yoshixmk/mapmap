@@ -42,7 +42,6 @@ public class HomePage extends WebPage {
 	public HomePage(final PageParameters parameters) {
 		super(parameters);
 		add(form);
-
 		Button nextButton = new Button("nextButton") {
 			private static final long serialVersionUID = 1L;
 			public void onSubmit() {
