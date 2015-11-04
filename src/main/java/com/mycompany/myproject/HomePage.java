@@ -64,8 +64,7 @@ public class HomePage extends WebPage {
 			productItemList.add(new ProductItem());
 		}
 
-		form.add(new FeedbackPanel("feedbackMessage",
-				new ExactLevelFeedbackMessageFilter(FeedbackMessage.ERROR)));
+		form.add(new FeedbackPanel("feedbackMessage"));
 		ListView<ProductItem> productItemListView = new ListView<ProductItem>("productItemList", productItemList) {
 			@Override
 			protected void populateItem(ListItem<ProductItem> listItem) {
