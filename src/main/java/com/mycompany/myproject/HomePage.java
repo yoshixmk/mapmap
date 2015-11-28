@@ -2,7 +2,6 @@ package com.mycompany.myproject;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
@@ -13,7 +12,6 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.settings.def.DebugSettings;
 import org.apache.wicket.validation.validator.RangeValidator;
 
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ public class HomePage extends WebPage {
     private Model<String> mOrderingCompanyAddress = new Model<String>();
     private Model<String> mOrderingContactPersonName = new Model<String>();
     private ArrayList<ProductItem> productItemList = new ArrayList<ProductItem>();
-    private int productItemListNumber=1;
 
     private Form form = new Form("form") {
         private static final long serialVersionUID = -1700095884500348972L;
@@ -61,7 +58,7 @@ public class HomePage extends WebPage {
         //最初は項目が1つだけ
         productItemList.add(new ProductItem());
         //項目追加
-        final AjaxLink<Void> productItemAddButton = new AjaxLink<Void>("productItemAddButton"){
+        final AjaxLink<Void> productItemAddButton = new AjaxLink<Void>("productItemAddButton") {
             @Override
             public void onClick(AjaxRequestTarget target) {
                 productItemList.add(new ProductItem());
