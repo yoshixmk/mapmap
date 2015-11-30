@@ -46,12 +46,15 @@ public class HomePage extends WebPage {
 
         // フォームにテキストフィールドを追加
         TextField field = new TextField<String>("orderingCompany", mOrderingCompany);
+        field.setRequired(true);
         field.setOutputMarkupId(true);
         form.add(field);//受注先会社名
         field = new TextField<String>("orderingCompanyAddress", mOrderingCompanyAddress);
+        field.setRequired(true);
         field.setOutputMarkupId(true);
         form.add(field);//住所
         field = new TextField<String>("orderingContactPersonName", mOrderingContactPersonName);
+        field.setRequired(true);
         field.setOutputMarkupId(true);
         form.add(field);//受注先担当者名
 
