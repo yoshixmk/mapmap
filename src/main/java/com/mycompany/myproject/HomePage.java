@@ -1,7 +1,8 @@
 package com.mycompany.myproject;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
@@ -9,6 +10,7 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -22,27 +24,23 @@ public class HomePage extends WebPage {
     private Model<String> mOrderingCompanyAddress = new Model<String>();
     private Model<String> mOrderingContactPersonName = new Model<String>();
     private ArrayList<ProductItem> productItemList = new ArrayList<ProductItem>();
-
-    private Form form = new Form("form") {
-        private static final long serialVersionUID = -1700095884500348972L;
-
-        @Override
-        protected void onSubmit() {
-            PrintPage result = new PrintPage((HomePage) this.getParent());
-            setResponsePage(result);
-        }
-    };
+    private ListView<ProductItem> productItemListView;
 
     public HomePage(final PageParameters parameters) {
         super(parameters);
-        add(form);
-        Button nextButton = new Button("nextButton") {
-            private static final long serialVersionUID = 1L;
-
-            public void onSubmit() {
-            }
+        Form form = new Form("form"){
+//            public void onSubmit() {
+//                PrintPage result = new PrintPage((HomePage) this.getParent());
+//                setResponsePage(result);
+//            }
         };
-        form.add(nextButton);
+        form.setOutputMarkupId(true);
+        form.add(new Button("nextButton") {
+            public void onSubmit() {
+                PrintPage result = new PrintPage((HomePage) this.getParent().getParent());
+                setResponsePage(result);
+            }
+        });
 
         // フォームにテキストフィールドを追加
         TextField field = new TextField<String>("orderingCompany", mOrderingCompany);
@@ -60,30 +58,46 @@ public class HomePage extends WebPage {
 
         //最初は項目が1つだけ
         productItemList.add(new ProductItem());
-        //項目追加
-        final AjaxLink<Void> productItemAddButton = new AjaxLink<Void>("productItemAddButton") {
-            @Override
-            public void onClick(AjaxRequestTarget target) {
-                productItemList.add(new ProductItem());
-                target.add(form);
-            }
-        };
 
-        form.add(productItemAddButton);
+        // リストビュー用のコンテナを作成してフォームに追加
+        final WebMarkupContainer container = new WebMarkupContainer("listViewContainer");
+        container.setOutputMarkupId(true);
+
+        //項目追加
+        container.add(new AjaxButton("productItemAddButton") {
+            @Override
+            protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+                setOutputMarkupId(true);
+                // retrieve the product item
+                ProductItem item = (ProductItem) getParent().getDefaultModelObject();
+                // add the item
+                productItemList.add(new ProductItem());
+
+                // repaint the listview as there was a new item added.
+                target.add(container);
+            }
+        });
+
         form.add(new FeedbackPanel("feedbackMessage"));
-        ListView<ProductItem> productItemListView = new ListView<ProductItem>("productItemList", productItemList) {
+        productItemListView = new ListView<ProductItem>("productItemList", productItemList) {
+            private static final long serialVersionUID = 1L;
             @Override
             protected void populateItem(ListItem<ProductItem> listItem) {
-                ProductItem productItem = listItem.getModelObject();
-                listItem.add(new TextField<String>("productItemName", new PropertyModel<String>(productItem, "productItemName")));
+                final ProductItem productItem = listItem.getModelObject();
+                listItem.setModel(new CompoundPropertyModel<ProductItem>(productItem));
+                listItem.add(new TextField<String>("productItemName", new PropertyModel<String>(productItem, "productItemName")))
+                        .setOutputMarkupId(true);
                 listItem.add(new TextField<Integer>("quantity", new PropertyModel<Integer>(productItem, "quantity"))
-                        .add(RangeValidator.minimum(0)));
+                        .add(RangeValidator.minimum(0))).setOutputMarkupId(true);
                 listItem.add(new TextField<Integer>("unitPrice", new PropertyModel<Integer>(productItem, "unitPrice"))
-                        .add(RangeValidator.minimum(0)));
+                        .add(RangeValidator.minimum(0))).setOutputMarkupId(true);
             }
         };
         productItemListView.setReuseItems(true);
-        form.add(productItemListView);
+        productItemListView.setOutputMarkupId(true);
+        container.add(productItemListView);
+        form.add(container);
+        add(form);
     }
 
     public Model getMOrderingCompany() {

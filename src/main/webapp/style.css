@@ -64,7 +64,7 @@ body { margin-top : 0; padding-top : 0;}
 	box-shadow: 0px 0px 10px #888;
 }
 
-#bd #productItemAddButton{
+#bd #addButton{
 	position: fixed;
 	right: 20%;
 	bottom: 30px;
