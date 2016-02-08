@@ -1,14 +1,13 @@
 package com.mycompany.myproject;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.util.time.Time;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
 
 /**
  * Created by yoshihiro on 15/07/28.
