@@ -20,6 +20,8 @@ import org.apache.wicket.validation.validator.RangeValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.classic.Level;
+
 public class HomePage extends WebPage {
     private static final long serialVersionUID = 1L;
     private Model<String> mOrderingCompany = new Model<String>();
@@ -34,6 +36,15 @@ public class HomePage extends WebPage {
     	//logback
     	Logger logger = LoggerFactory.getLogger(HomePage.class);
     	logger.info("Hello Logback!!");
+
+        ch.qos.logback.classic.Logger log = (ch.qos.logback.classic.Logger)logger;
+        log.setLevel(Level.TRACE); // traceレベルが出せるようにする
+
+        logger.trace("trace message");
+        logger.debug("debug message");
+        logger.info("info message");
+        logger.warn("warn message");
+        logger.error("error message");
 
         Form form = new Form("form"){
 //            public void onSubmit() {
