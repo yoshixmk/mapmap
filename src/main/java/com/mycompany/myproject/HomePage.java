@@ -46,6 +46,10 @@ public class HomePage extends WebPage {
         logger.warn("warn message");
         logger.error("error message");
 
+        logger.info("{} {}", "HOGE", "FUGA");
+        Integer smile = 2525;
+        logger.info("{} {}", "HOGE", smile);
+
         Form form = new Form("form"){
 //            public void onSubmit() {
 //                PrintPage result = new PrintPage((HomePage) this.getParent());
