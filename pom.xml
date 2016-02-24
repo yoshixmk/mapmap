@@ -139,8 +139,14 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<resources.directory>src/main/resources-debug</resources.directory>
 			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources-debug</directory>
+					</resource>
+				</resources>
+			</build>
 		</profile>
 		<profile>
 			<id>release</id>
@@ -148,16 +154,21 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<resources.directory>src/main/resources-release</resources.directory>
 			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources-release</directory>
+					</resource>
+				</resources>
+			</build>
 		</profile>
 	</profiles>
 
 	<build>
 		<resources>
  			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/resources-release</directory>
+				<directory>src/main/resources</directory>
 			</resource>
 			<resource>
 				<filtering>false</filtering>
@@ -172,7 +183,6 @@
 		</resources>
 		<testResources>
 			<testResource>
-				<filtering>false</filtering>
 				<directory>src/test/resources</directory>
 			</testResource>
 			<testResource>
