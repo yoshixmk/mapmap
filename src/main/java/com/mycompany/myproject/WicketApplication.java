@@ -45,7 +45,7 @@ public class WicketApplication extends WebApplication
     	Logger logger = LoggerFactory.getLogger("sampleLogger");
     	logger.info("Hello Logback!!");
 
-        ch.qos.logback.classic.Logger log = (ch.qos.logback.classic.Logger)logger;
+        //ch.qos.logback.classic.Logger log = (ch.qos.logback.classic.Logger)logger;
         //log.setLevel(Level.TRACE); // traceレベルが出せるようにする
 
         logger.trace("trace message");
@@ -58,10 +58,10 @@ public class WicketApplication extends WebApplication
         Integer smile = 2525;
         logger.info("{} {}", "HOGE", smile);
 
-        try {
+        /*try {
             throw new Exception("test exception");
         } catch (Exception e) {
             logger.info("error", e);
-        }
+        }*/
 	}
 }

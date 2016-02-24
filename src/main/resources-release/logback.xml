@@ -48,12 +48,12 @@
 		</encoder>
 	</appender>
 
-	<logger name="sampleLogger" additivity="false" level="info">
+	<logger name="sampleLogger" additivity="false" level="INFO">
 		<appender-ref ref="STDOUT" />
 	</logger>
 
 	<root>
-		<level value="info" />
+		<level value="INFO" />
 		<appender-ref ref="STDOUT" />
 		<!--<appender-ref ref="DAILY" />-->
 	</root>
