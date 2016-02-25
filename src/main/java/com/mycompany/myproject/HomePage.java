@@ -1,5 +1,7 @@
 package com.mycompany.myproject;
 
+import java.util.ArrayList;
+
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -16,8 +18,6 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.validation.validator.RangeValidator;
 
-import java.util.ArrayList;
-
 public class HomePage extends WebPage {
     private static final long serialVersionUID = 1L;
     private Model<String> mOrderingCompany = new Model<String>();
@@ -28,6 +28,7 @@ public class HomePage extends WebPage {
 
     public HomePage(final PageParameters parameters) {
         super(parameters);
+
         Form form = new Form("form"){
 //            public void onSubmit() {
 //                PrintPage result = new PrintPage((HomePage) this.getParent());
