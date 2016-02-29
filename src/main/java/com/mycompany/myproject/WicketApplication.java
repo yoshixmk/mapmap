@@ -2,6 +2,8 @@ package com.mycompany.myproject;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //import ch.qos.logback.classic.Level;
 import de.agilecoders.wicket.core.Bootstrap;
@@ -40,7 +42,7 @@ public class WicketApplication extends WebApplication
 		Bootstrap.install(this);
 
     	//logback test
-    	/*Logger logger = LoggerFactory.getLogger("sampleLogger");
+    	Logger logger = LoggerFactory.getLogger("sampleLogger");
     	logger.info("Hello Logback!!");
 
         //ch.qos.logback.classic.Logger log = (ch.qos.logback.classic.Logger)logger;
@@ -54,7 +56,7 @@ public class WicketApplication extends WebApplication
 
         logger.info("{} {}", "HOGE", "FUGA");
         Integer smile = 2525;
-        logger.info("{} {}", "HOGE", smile);*/
+        logger.info("{} {}", "HOGE", smile);
 
         /*try {
             throw new Exception("test exception");
