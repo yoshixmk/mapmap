@@ -40,4 +40,8 @@ public class TestProductItem {
 		assertThat("個数が初期化されています", productItem.getQuantity(), nullValue());
 	}
 
+	//check Calc Subtotal Price
+	@Test
+	public void testCalcSubtotalPrice() {
+	}
 }
