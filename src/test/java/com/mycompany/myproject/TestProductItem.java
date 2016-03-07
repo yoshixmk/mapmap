@@ -19,16 +19,12 @@ public class TestProductItem {
 		productItem.setProductItemName("パソコン");
 		productItem.setUnitPrice(30000);
 		productItem.setQuantity(10);
-		assertThat("名前が違います", productItem.getProductItemName(), is("パソコン"));
-		assertThat("価格が違います", productItem.getUnitPrice(), is(30000));
-		assertThat("個数が違います", productItem.getQuantity(), is(10));
 
-		productItem.setProductItemName("ノートパソコン");
-		productItem.setUnitPrice(50000);
-		productItem.setQuantity(3);
-		assertThat("名前が違います", productItem.getProductItemName(), is("ノートパソコン"));
-		assertThat("価格が違います", productItem.getUnitPrice(), is(50000));
-		assertThat("個数が違います", productItem.getQuantity(), is(3));
+		ProductItem productItem2 = new ProductItem();
+		productItem2.setProductItemName("パソコン");
+		productItem2.setUnitPrice(30000);
+		productItem2.setQuantity(10);
+		assertThat(productItem.equals(productItem2), is(true));
 	}
 
 	//null values test
