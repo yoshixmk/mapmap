@@ -27,17 +27,13 @@ public class TestProductItem {
 		assertThat(productItem.equals(productItem2), is(true));
 	}
 
-	//null values test
-	@Test
-	public void testGetNullValue() {
-		ProductItem productItem = new ProductItem();
-		assertThat("名前が初期化されています", productItem.getProductItemName(), nullValue());
-		assertThat("価格が初期化されています", productItem.getUnitPrice(), nullValue());
-		assertThat("個数が初期化されています", productItem.getQuantity(), nullValue());
-	}
-
 	//check Calc Subtotal Price
 	@Test
 	public void testCalcSubtotalPrice() {
+		ProductItem productItem = new ProductItem();
+		productItem.setProductItemName("パソコン");
+		productItem.setUnitPrice(30000);
+		productItem.setQuantity(10);
+		assertThat(productItem.calcSubtotalPrice(), is(300000));
 	}
 }
