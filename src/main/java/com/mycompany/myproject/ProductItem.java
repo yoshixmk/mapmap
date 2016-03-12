@@ -25,18 +25,20 @@ public class ProductItem implements Serializable{
     @Override
     public boolean equals(Object anObject)
     {
-    	if (this == anObject)
-    	      return true;
-    	    if (!(anObject instanceof ProductItem))
-    	      return false;
-    	    ProductItem otherProductItem = (ProductItem) anObject;
-    	    if(productItemName.equals(otherProductItem.getProductItemName())){
-    	    	if(quantity.equals(otherProductItem.getQuantity())){
-    	    		if(unitPrice.equals(otherProductItem.getUnitPrice())){
-        	    		return true;
-        	    	}
+    	if (this == anObject){
+	      return true;
+    	}
+	    if (!(anObject instanceof ProductItem)){
+	      return false;
+	    }
+	    ProductItem otherProductItem = (ProductItem) anObject;
+	    if(productItemName.equals(otherProductItem.getProductItemName())){
+	    	if(quantity.equals(otherProductItem.getQuantity())){
+	    		if(unitPrice.equals(otherProductItem.getUnitPrice())){
+    	    		return true;
     	    	}
-    	    }
-    	    return false;
+	    	}
+	    }
+	    return false;
     }
 }

@@ -15,17 +15,17 @@ public class TestProductItem {
 	//同一の内容であるかをテストする
 	@Test
 	public void testSameContents() {
-		ProductItem productItem = new ProductItem();
-		productItem.setProductItemName("パソコン");
-		productItem.setUnitPrice(30000);
-		productItem.setQuantity(10);
+		ProductItem productItem1 = new ProductItem();
+		productItem1.setProductItemName("パソコン");
+		productItem1.setUnitPrice(30000);
+		productItem1.setQuantity(10);
 
 		ProductItem productItem2 = new ProductItem();
 		productItem2.setProductItemName("パソコン");
 		productItem2.setUnitPrice(30000);
 		productItem2.setQuantity(10);
 		//assertThat(productItem.equals(productItem2), is(true));
-		assertThat(productItem, is(productItem2));
+		assertThat(productItem1, is(productItem2));
 	}
 
 	//正しく小計が計算されるかをテストする
