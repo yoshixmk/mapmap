@@ -12,9 +12,9 @@ public class TestProductItem {
 //	テストメソッドは「引数なし」+「返り値なし」
 //	テストメソッドに 「assertEquals("error時の文",期待値,実測値)」
 
-	//set values and get values test
+	//同一の内容であるかをテストする
 	@Test
-	public void testSetValueGetValue() {
+	public void testSameContents() {
 		ProductItem productItem = new ProductItem();
 		productItem.setProductItemName("パソコン");
 		productItem.setUnitPrice(30000);
@@ -24,10 +24,11 @@ public class TestProductItem {
 		productItem2.setProductItemName("パソコン");
 		productItem2.setUnitPrice(30000);
 		productItem2.setQuantity(10);
-		assertThat(productItem.equals(productItem2), is(true));
+		//assertThat(productItem.equals(productItem2), is(true));
+		assertThat(productItem, is(productItem2));
 	}
 
-	//check Calc Subtotal Price
+	//正しく小計が計算されるかをテストする
 	@Test
 	public void testCalcSubtotalPrice() {
 		ProductItem productItem = new ProductItem();
