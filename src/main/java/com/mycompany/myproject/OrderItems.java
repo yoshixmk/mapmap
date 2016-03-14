@@ -1,6 +1,7 @@
 package com.mycompany.myproject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -13,6 +14,10 @@ public class OrderItems implements Serializable{
 	private int sumSubPrice;
 	private int totalPrice;
 	private int consumptionTax;
+
+	public OrderItems(){
+		productItemList =new ArrayList<ProductItem>();
+	}
 
 	public void addProductItem(ProductItem productItem){
 		productItemList.add(productItem);
