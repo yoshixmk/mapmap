@@ -2,6 +2,7 @@ package com.mycompany.myproject;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import lombok.Data;
 
@@ -9,19 +10,28 @@ import lombok.Data;
 public class OrderItems implements Serializable{
 	private List<ProductItem> productItemList;
 	private static double TAX_RATE = 0.08;
-	private int sumSubPrice = 0;
-	private int totalPrice = 0;
-	private int consumptionTax = 0;
+	private int sumSubPrice;
+	private int totalPrice;
+	private int consumptionTax;
 
-	void addProductItem(ProductItem productItem){
-
+	public void addProductItem(ProductItem productItem){
+		productItemList.add(productItem);
 	}
 
-	ProductItem getProductItem(){
-		return new ProductItem();
+	public ProductItem getProductItem(int index){
+		return productItemList.get(index);
+	}
+
+	public int size(){
+		return productItemList.size();
 	}
 
 	public int getsumSubPrice(){
+		sumSubPrice = 0;
+		IntStream.range(0, productItemList.size()).forEach(i->{
+			sumSubPrice += productItemList.get(i).getUnitPrice();
+		});
+		//sumSubPrice = productItemList.stream().forEach(s -> s.getUnitPrice());
 		return sumSubPrice;
 	}
 
@@ -36,20 +46,23 @@ public class OrderItems implements Serializable{
     @Override
     public boolean equals(Object anObject)
     {
-    	/*if (this == anObject){
+    	if (this == anObject){
   	      return true;
       	}
-  	    if (!(anObject instanceof ProductItem)){
+  	    if (!(anObject instanceof OrderItems)){
   	      return false;
   	    }
-  	    ProductItem otherProductItem = (ProductItem) anObject;
-  	    if(productItemName.equals(otherProductItem.getProductItemName())){
-  	    	if(quantity.equals(otherProductItem.getQuantity())){
-  	    		if(unitPrice.equals(otherProductItem.getUnitPrice())){
-      	    		return true;
-      	    	}
-  	    	}
-  	    }*/
-  	    return false;
+  	    OrderItems otherOrderItems = (OrderItems)anObject;
+  	    if(productItemList.size() == otherOrderItems.size()){
+	  	    for(int i=0; i<productItemList.size(); i++){
+	  	    	if(!getProductItem(i).equals(otherOrderItems.getProductItem(i))){
+	  	    		return false;
+	  	    	}
+	  	    }
+  	    }
+  	    else{
+  	    	return false;
+  	    }
+  	    return true;
     }
 }
