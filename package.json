@@ -1,0 +1,57 @@
+{
+  "name": "ts-boilerplate",
+  "version": "0.2.1",
+  "main": "dist/index.js",
+  "repository": "git@github.com:jamashita/ts-boilerplate.git",
+  "author": "jamashita <jamashita@arachnid.xyz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node dist/index.js",
+    "compile": "tsc",
+    "dev": "ts-node src/index.ts",
+    "watch": "ts-node-dev --respawn src/index.ts",
+    "clean": "rimraf dist",
+    "build": "yarn clean && yarn compile",
+    "lint": "eslint 'src/**/*.ts{,x}' --fix",
+    "update": "ncu -u && yarn install",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">= 12.16.2",
+    "npm": ">= 6.14.4"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "25.2.1",
+    "@types/node": "13.13.4",
+    "@typescript-eslint/eslint-plugin": "2.29.0",
+    "@typescript-eslint/parser": "2.29.0",
+    "@typescript-eslint/typescript-estree": "2.29.0",
+    "eslint": "6.8.0",
+    "jest": "25.4.0",
+    "npm-check-updates": "4.1.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "25.4.0",
+    "ts-node": "8.9.1",
+    "ts-node-dev": "1.0.0-pre.44",
+    "typescript": "3.8.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|js)"
+    ]
+  }
+}

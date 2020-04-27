@@ -1,33 +1,3 @@
-# Java
-*.class
-*.jar
-*.war
-*.ear
-
-# Idea
-.idea
-*.iml
-*.iws
-*.ipr
-
-# OS
-Thumbs.db
-.DS_Store
-
-# Maven
-target
-
-# Build
-out
-build
-bin
-
-# Other
+**/node_modules/*
+**/dist/*
 *.log
-*.swp
-*.bak
-
-#Eclipse
-.classpath
-.project
-.settings/
