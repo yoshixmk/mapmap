@@ -1,9 +1,10 @@
 export class MapMap<K, V> implements Map<K, V> {
-  private collections = new Map<K, V>();
+  private collections: Map<K, V>;
 
   readonly size: number;
 
   constructor() {
+    this.collections = new Map<K, V>();
     this.size = 0;
   }
 
