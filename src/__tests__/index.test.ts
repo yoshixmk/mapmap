@@ -7,10 +7,9 @@ describe('greet', (): void => {
     expect(mapmap.has('hoge')).toBe(true);
   });
 
-  // TODO
-  // test('if map has not key, return false', (): void => {
-  //   const mapmap = new MapMap<string, string>()
-  //   mapmap.set('hoge', 'fuga');
-  //   expect(mapmap.has('bar')).toBe(false);
-  // });
+  test('if map has not key, return false', (): void => {
+    const mapmap = new MapMap<string, string>()
+    mapmap.set('hoge', 'fuga');
+    expect(mapmap.has('bar')).toBe(false);
+  });
 });

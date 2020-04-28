@@ -21,7 +21,8 @@ export class MapMap<K, V> implements Map<K, V> {
     throw new Error("Method not implemented.");
   };
   has(key: K): boolean {
-    return true;
+    const keys: IterableIterator<K> = this.collections.keys();
+    return Array.from(keys).includes(key);
   };
   set(key: K, value: V): this {
     this.collections.set(key, value);
