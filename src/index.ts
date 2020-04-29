@@ -1,6 +1,8 @@
 import StringKey from './StringKey';
 
-export default class MapMap<K extends StringKey /* union using | */, V> implements Map<K, V> {
+export type MapMapKey = StringKey; /* union using | */
+
+export default class MapMap<K extends MapMapKey, V> implements Map<K, V> {
   private collections: Map<K, V>;
 
   public readonly size: number;
@@ -8,17 +10,17 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
   public [Symbol.toStringTag]: string = 'Map that supports object literals';
   public constructor() {
     this.collections = new Map<K, V>();
-    this.size = 0;
+    this.size = this.collections.size;
   }
 
   public clear(): void{
     this.collections = new Map<K, V>();
   }
   public delete(key: K): boolean {
-    const keys: IterableIterator<K> = this.keys();
-    const targetKey: K | undefined = Array.from(keys).find((k: K) => k.equals(key));
-    if (targetKey !== undefined) {
-      return this.collections.delete(targetKey);
+    for (const k of this.keys()) {
+      if (key.equals(k)) {
+        return this.collections.delete(k);
+      }
     }
     return false;
   }
@@ -27,16 +29,14 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
     this.collections.forEach(callbackfn, thisArg);
   }
   public get(key: K): V | undefined {
-    const entries: IterableIterator<[K, V]> = this.entries();
-    for (const e of entries) {
+    for (const e of this.entries()) {
       if (e[0].equals(key)) {
         return e[1];
       }
     }
   }
   public has(key: K): boolean {
-    const keys: IterableIterator<K> = this.keys();
-    return Array.from(keys).find((k: K) => k.equals(key)) !== undefined;
+    return Array.from(this.keys()).find((k: K) => k.equals(key)) !== undefined;
   }
   public set(key: K, value: V): this {
     this.collections.set(key, value);
