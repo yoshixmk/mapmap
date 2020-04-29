@@ -5,7 +5,8 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
 
   public readonly size: number;
 
-  constructor() {
+  public [Symbol.toStringTag]: string = 'Map that supports object literals';
+  public constructor() {
     this.collections = new Map<K, V>();
     this.size = 0;
   }
@@ -15,17 +16,18 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
   }
   public delete(key: K): boolean {
     const keys: IterableIterator<K> = this.collections.keys();
-    const targetKey: K | undefined = Array.from(keys).find((k) => k.equals(key));
+    const targetKey: K | undefined = Array.from(keys).find((k: K) => k.equals(key));
     if (targetKey !== undefined) {
       return this.collections.delete(targetKey);
     }
     return false;
   }
-  public forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void {
-
+  /* eslint @typescript-eslint/no-explicit-any: ["error", { "fixToUnknown": true }]*/
+  public forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: unknown): void {
+    this.collections.forEach(callbackfn, thisArg);
   }
   public get(key: K): V | undefined {
-    const entries = this.collections.entries();
+    const entries: IterableIterator<[K, V]> = this.collections.entries();
     for (const e of entries) {
       if (e[0].equals(key)) {
         return e[1];
@@ -34,7 +36,7 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
   }
   public has(key: K): boolean {
     const keys: IterableIterator<K> = this.collections.keys();
-    return Array.from(keys).find((k) => k.equals(key)) !== undefined;
+    return Array.from(keys).find((k: K) => k.equals(key)) !== undefined;
   }
   public set(key: K, value: V): this {
     this.collections.set(key, value);
@@ -49,7 +51,6 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
   public values(): IterableIterator<V> {
     throw new Error('Method not implemented.');
   }
-  public [Symbol.toStringTag]: string;
   public [Symbol.iterator](): IterableIterator<[K, V]> {
     throw new Error('Method not implemented.');
   }

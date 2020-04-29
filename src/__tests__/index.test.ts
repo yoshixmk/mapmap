@@ -1,5 +1,5 @@
-import MapMap from 'src';
-import StringKey from 'src/StringKey';
+import MapMap from '../index';
+import StringKey from '../StringKey';
 
 class Value<V> {
   private value: V;
@@ -13,13 +13,13 @@ class Value<V> {
 
 describe('greet', (): void => {
   test('if map has key, return true', (): void => {
-    const mapmap = new MapMap<StringKey, string>();
+    const mapmap: MapMap<StringKey, string> = new MapMap<StringKey, string>();
     mapmap.set(new StringKey('hoge'), 'fuga');
     expect(mapmap.has(new StringKey('hoge'))).toBe(true);
   });
 
   test('if map has not key, return false', (): void => {
-    const mapmap = new MapMap<StringKey, string>();
+    const mapmap: MapMap<StringKey, string> = new MapMap<StringKey, string>();
     mapmap.set(new StringKey('hoge'), 'fuga');
     expect(mapmap.has(new StringKey('bar'))).toBe(false);
   });
