@@ -15,7 +15,7 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
     this.collections = new Map<K, V>();
   }
   public delete(key: K): boolean {
-    const keys: IterableIterator<K> = this.collections.keys();
+    const keys: IterableIterator<K> = this.keys();
     const targetKey: K | undefined = Array.from(keys).find((k: K) => k.equals(key));
     if (targetKey !== undefined) {
       return this.collections.delete(targetKey);
@@ -27,7 +27,7 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
     this.collections.forEach(callbackfn, thisArg);
   }
   public get(key: K): V | undefined {
-    const entries: IterableIterator<[K, V]> = this.collections.entries();
+    const entries: IterableIterator<[K, V]> = this.entries();
     for (const e of entries) {
       if (e[0].equals(key)) {
         return e[1];
@@ -35,7 +35,7 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
     }
   }
   public has(key: K): boolean {
-    const keys: IterableIterator<K> = this.collections.keys();
+    const keys: IterableIterator<K> = this.keys();
     return Array.from(keys).find((k: K) => k.equals(key)) !== undefined;
   }
   public set(key: K, value: V): this {
@@ -43,15 +43,15 @@ export default class MapMap<K extends StringKey /* union using | */, V> implemen
     return this;
   }
   public entries(): IterableIterator<[K, V]> {
-    throw new Error('Method not implemented.');
+    return this.collections.entries();
   }
   public keys(): IterableIterator<K> {
-    throw new Error('Method not implemented.');
+    return this.collections.keys();
   }
   public values(): IterableIterator<V> {
-    throw new Error('Method not implemented.');
+    return this.collections.values();
   }
   public [Symbol.iterator](): IterableIterator<[K, V]> {
-    throw new Error('Method not implemented.');
+    return this.collections[Symbol.iterator]();
   }
 }
