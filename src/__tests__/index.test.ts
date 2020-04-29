@@ -1,4 +1,15 @@
-import { MapMap, StringKey, Value } from '../index';
+import MapMap from 'src';
+import StringKey from 'src/StringKey';
+
+class Value<V> {
+  private value: V;
+  public constructor(value: V) {
+    this.value = value;
+  }
+  public get(): V {
+    return this.value;
+  }
+}
 
 describe('greet', (): void => {
   test('if map has key, return true', (): void => {
