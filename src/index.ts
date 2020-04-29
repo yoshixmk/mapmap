@@ -1,4 +1,30 @@
-export class MapMap<K, V> implements Map<K, V> {
+export abstract class Key<K> {
+  private key: K;
+  constructor(key: K) {
+    this.key = key;
+  }
+  get(): K {
+    return this.key;
+  }
+  abstract equals(other: Key<K>): Boolean;
+}
+
+export class Value<V> {
+  private value: V;
+  constructor(value: V) {
+    this.value = value;
+  }
+  get(): V {
+    return this.value;
+  }
+}
+export class StringKey extends Key<String> {
+  equals(other: Key<String>): Boolean {
+    return this.get() === other.get()
+  }
+}
+
+export class MapMap<K extends StringKey /* union using | */, V> implements Map<K, V> {
   private collections: Map<K, V>;
 
   readonly size: number;
@@ -18,12 +44,17 @@ export class MapMap<K, V> implements Map<K, V> {
   forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void {
 
   };
-  get(key: K): V {
-    throw new Error("Method not implemented.");
+  get(key: K): V | undefined {
+    const entries = this.collections.entries();
+    for (const e of entries) {
+      if (e[0].equals(key)) {
+        return e[1];
+      }
+    }
   };
   has(key: K): boolean {
     const keys: IterableIterator<K> = this.collections.keys();
-    return Array.from(keys).includes(key);
+    return Array.from(keys).find(k => k.equals(key)) !== undefined;
   };
   set(key: K, value: V): this {
     this.collections.set(key, value);
